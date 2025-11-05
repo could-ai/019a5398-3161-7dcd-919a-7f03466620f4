@@ -22,10 +22,20 @@ class _HomePageState extends State<HomePage> {
     'BMI & History',
   ];
 
+  final List<String> featureRoutes = [
+    '/sugar_oil',
+    '/food_analyzer',
+    '/mood_suggestions',
+    '/expiry_tracker',
+    '/hygiene_notifications',
+    '/custom_alarms',
+    '/water_tracker',
+    '/sleep_tracker',
+    '/bmi_history',
+  ];
+
   void _onFeatureTap(int index) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('${featureNames[index]} coming soon!')),
-    );
+    Navigator.pushNamed(context, featureRoutes[index]);
   }
 
   @override
