@@ -8,6 +8,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  supabase_flutter: ^1.4.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -15,7 +16,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    # Placeholder for font asset - add the actual Instagram-style round font file here
     - assets/fonts/InstagramRound-Regular.ttf
   fonts:
     - family: InstagramRound

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'services/supabase_service.dart';
 import 'screens/splash_screen.dart';
 import 'screens/home_page.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SupabaseService.initialize(); // Initialize Supabase before running the app
   runApp(const ShinCareApp());
 }
 
@@ -16,11 +20,8 @@ class ShinCareApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: const Color(0xFF4A90E2),
-        // Scaffold background color for a clean, minimalist look
         scaffoldBackgroundColor: Colors.white,
-        // Instagram-style round font
         fontFamily: 'InstagramRound',
-        // Define color scheme to replace deprecated accentColor
         colorScheme: const ColorScheme.light(
           primary: Color(0xFF4A90E2),
           secondary: Colors.white,
