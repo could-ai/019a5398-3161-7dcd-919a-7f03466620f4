@@ -16,9 +16,15 @@ class ShinCareApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: const Color(0xFF4A90E2),
-        accentColor: Colors.white,
+        // Scaffold background color for a clean, minimalist look
         scaffoldBackgroundColor: Colors.white,
+        // Instagram-style round font
         fontFamily: 'InstagramRound',
+        // Define color scheme to replace deprecated accentColor
+        colorScheme: const ColorScheme.light(
+          primary: Color(0xFF4A90E2),
+          secondary: Colors.white,
+        ),
         pageTransitionsTheme: const PageTransitionsTheme(
           builders: {
             TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
@@ -29,7 +35,11 @@ class ShinCareApp extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.transparent,
           iconTheme: IconThemeData(color: Color(0xFF4A90E2)),
-          titleTextStyle: TextStyle(color: Color(0xFF4A90E2), fontSize: 20, fontFamily: 'InstagramRound'),
+          titleTextStyle: TextStyle(
+            color: Color(0xFF4A90E2),
+            fontSize: 20,
+            fontFamily: 'InstagramRound',
+          ),
         ),
       ),
       initialRoute: '/',

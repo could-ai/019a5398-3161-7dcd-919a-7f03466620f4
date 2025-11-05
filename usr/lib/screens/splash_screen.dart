@@ -19,10 +19,12 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       vsync: this,
       duration: const Duration(seconds: 2),
     )..repeat(reverse: true);
-    _animation = Tween<double>(begin: 0.9, end: 1.1).animate(CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeInOut,
-    ));
+    _animation = Tween<double>(begin: 0.9, end: 1.1).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeInOut,
+      ),
+    );
     // Navigate to Home after animation completes
     Timer(const Duration(seconds: 4), () {
       // Do nothing, wait for user to tap "Let's Start"
@@ -73,7 +75,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                   Navigator.pushReplacementNamed(context, '/home');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: const Color(0xFF4A90E2),
+                  // Replaced deprecated 'primary' with 'backgroundColor'
+                  backgroundColor: const Color(0xFF4A90E2),
                   padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24),
